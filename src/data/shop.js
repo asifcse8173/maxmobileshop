@@ -1,9 +1,10 @@
 export const SHOP = {
-  name: "Max Mobile Shop",
+  name: "Max Mobile Shop And Repairing Cnoytentre",
   tagline: "Trusted mobile repair and accessories store",
-  phone: "9569618807", // country code + number, no + or spaces
+  phone: "7275039714", // country code + number, no + or spaces
+  whatsapp: "9569618807", // country code + number, no + or spaces
   display: "+91 7275039714",
-  address: "Shop No. 12, Main Market, Noida, Uttar Pradesh",
+  address: "Max Mobile and Repairing Centre, Katohar, Hanswar, Ambedkar Nagar",
   hours: "Mon–Sat 10:00 AM – 9:00 PM",
   map: "https://www.google.com/maps/search/?api=1&query=Max+Mobile+Shop+Hanswar+Katokhar+Churaha", // or paste your own Google Maps share link
   photo: "/shop.jpg", // put your shop photo in the /public folder with this name

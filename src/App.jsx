@@ -32,6 +32,7 @@ export default function App() {
       <div className="strip">
         <span>{SHOP.hours}</span>
         <a href={telLink}>Call {SHOP.display}</a>
+        <a className="map-link" href={SHOP.map} target="_blank" rel="noreferrer">Get directions on Google Maps</a>
       </div>
 
       <header className="top">
@@ -62,7 +63,7 @@ export default function App() {
               aria-label="Phone model"
             />
             <a className="btn wa" href={waLink(quoteMsg)} target="_blank" rel="noreferrer">
-              Get quote on WhatsApp
+              Chat with us
             </a>
           </div>
           <a className="textlink" href={telLink}>Or call us: {SHOP.display}</a>
@@ -136,15 +137,14 @@ export default function App() {
         </div>
         <div className="contact-cta">
           <EnquiryButtons subject="general enquiry" />
-          <a className="btn map" href={SHOP.map} target="_blank" rel="noreferrer">Get directions on Google Maps</a>
         </div>
       </section>
 
-      <a className="float" href={waLink(`Hello ${SHOP.name}, I have an enquiry.`)} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">
-        WhatsApp us
+      <a className="float" href={waLink(quoteMsg)} target="_blank" rel="noreferrer" aria-label="Get quote on WhatsApp">
+        Get quote on WhatsApp
       </a>
 
-      <footer>© {new Date().getFullYear()} {SHOP.name}. All brand names belong to their owners. <a href="#/admin">Admin</a></footer>
+      <footer>© {new Date().getFullYear()} {SHOP.name}. All brand names belong to their owners. <a href="#/admin">Mohd Adil</a></footer>
     </div>
   );
 }

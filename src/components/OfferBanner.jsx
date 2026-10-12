@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
 import { SHOP } from "../data/shop";
 import { waLink } from "../utils/links";
+import { OFFERS } from "../data/offers";
 
 export default function OfferBanner({ offers = [] }) {
   const [i, setI] = useState(0);
   const [hidden, setHidden] = useState(false);
+  const visibleOffers = offers.length ? offers : OFFERS;
 
   useEffect(() => {
-    if (offers.length < 2 || hidden) return;
-    const t = setInterval(() => setI((n) => (n + 1) % offers.length), 4000);
+    if (visibleOffers.length < 2 || hidden) return;
+    const t = setInterval(() => setI((n) => (n + 1) % visibleOffers.length), 4000);
     return () => clearInterval(t);
-  }, [hidden, offers.length]);
+  }, [hidden, visibleOffers.length]);
 
-  if (hidden || offers.length === 0) return null;
-  const o = offers[i % offers.length];
+  if (hidden || visibleOffers.length === 0) return null;
+  const o = visibleOffers[i % visibleOffers.length];
   return (
     <div className="offer" role="region" aria-label="Current offers">
       <span className="offer-badge">Offer</span>

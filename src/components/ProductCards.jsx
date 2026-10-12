@@ -1,33 +1,38 @@
 import { PRODUCT_CARDS } from "../data/products";
-import { SHOP } from "../data/shop";
-import { waLink } from "../utils/links";
+import EnquiryButtons from "./EnquiryButtons";
 
-export const LIMIT = 4;
+export const LIMIT = 1;
 
-export const enquiryLink = (p) =>
-  waLink(`Hello ${SHOP.name}, I want to enquire about: ${p.name}. Please share price and availability.`);
-
-// 16 fixed cards. Each shows only the first 4 products (newest first) + a More button.
+// 16 fixed cards. Each shows only the newest product and a More button when needed.
 export default function ProductCards({ products }) {
   return (
     <div className="product-cards">
       {PRODUCT_CARDS.map((card) => {
         const items = products.filter((p) => p.cat === card);
+        const product = items[0];
         return (
           <article className="product-card" key={card}>
-            <h3>{card}</h3>
+            <span className="tag">{card}</span>
             <div className="product-buttons">
-              {items.slice(0, LIMIT).map((p) => (
-                <a key={p.id} className="product-button" href={enquiryLink(p)} target="_blank" rel="noreferrer">
-                  <span>{p.name}</span>
-                  <small>{p.price}</small>
-                </a>
-              ))}
-              {items.length === 0 && <p className="product-empty">No products yet</p>}
-              {items.length > LIMIT && (
-                <a className="more-button" href={`#/products/${encodeURIComponent(card)}`}>More</a>
+              {product && (
+                <>
+                  {product.image ? (
+                    <img className="pimg" src={product.image} alt={product.name} loading="lazy" />
+                  ) : (
+                    <div className="pimg" aria-label="Product image unavailable" />
+                  )}
+                  {!product.inStock && <span className="oos">Out of stock</span>}
+                  <h3>{product.name}</h3>
+                  <p>{product.note}</p>
+                  <div className="price">{product.price}</div>
+                  <EnquiryButtons subject={product.name} small />
+                </>
               )}
+              {items.length === 0 && <p className="product-empty">No products yet</p>}
             </div>
+            {items.length > LIMIT && (
+              <a className="more-button" href={`#/products/${encodeURIComponent(card)}`}>More</a>
+            )}
           </article>
         );
       })}
