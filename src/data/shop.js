@@ -1,12 +1,12 @@
 export const SHOP = {
-  name: "Max Mible & Repairing Centre",
+  name: "max mobile & repairing centre",
   tagline: "Trusted mobile repair and accessories store",
   phone: "7275039714", // country code + number, no + or spaces
   whatsapp: "9569618807", // country code + number, no + or spaces
   display: "+91 7275039714",
-  address: "Max Mible & Repairing Centre, Katohar, Hanswar, Ambedkar Nagar",
+  address: "max mobile & repairing centre, Katohar, Hanswar, Ambedkar Nagar",
   hours: "Mon–Sat 10:00 AM – 9:00 PM",
-  map: "https://www.google.com/maps/search/?api=1&query=Max+Mible+Repairing+Centre+Hanswar+Katokhar+Churaha", // or paste your own Google Maps share link
+  map: "https://www.google.com/maps/search/?api=1&query=Max+Mobile+Repairing+Centre+Hanswar+Katokhar+Churaha", // or paste your own Google Maps share link
   photo: "/shop.jpg", // put your shop photo in the /public folder with this name
 };
 
