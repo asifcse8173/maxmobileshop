@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import { SHOP } from "../data/shop";
 import ProductsAdmin from "./ProductsAdmin";
 import OffersAdmin from "./OffersAdmin";
 
@@ -52,7 +53,7 @@ export default function Admin() {
   return (
     <div className="adm">
       <header className="adm-top">
-        <strong>Max Mobile Shop admin</strong>
+        <strong>{SHOP.name} admin</strong>
         <div>
           <a href="#/">View website</a>
           <button className="adm-btn" onClick={() => supabase.auth.signOut()}>Sign out</button>
