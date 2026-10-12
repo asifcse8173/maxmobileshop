@@ -1,5 +1,5 @@
 export const SHOP = {
-  name: "Max Mobile Shop And Repairing Cnoytentre",
+  name: "Max Mobile & Repairing Centre",
   tagline: "Trusted mobile repair and accessories store",
   phone: "7275039714", // country code + number, no + or spaces
   whatsapp: "9569618807", // country code + number, no + or spaces
